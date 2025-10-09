@@ -1,13 +1,15 @@
 package service;
 
+import dao.LandingPageContentDAOJAXB;
 import model.LandingPageContent;
 
 public class LandingPageServiceMock implements LandingPageService {
-
+LandingPageContentDAOJAXB dao;
     @Override
     public LandingPageContent getLandingPageContent(String idioma) {
-        return new LandingPageContent("Este es el contenido Mock de la sección quienesSomos",
-                "Este es el contenido Mock de la sección amor por los productos",
-                "Estw es el contenid Mock de la sección experiencia ");
+        dao = new LandingPageContentDAOJAXB();
+        return new LandingPageContent(dao.getQuienesomos(),
+                dao.getNuestrapasion(),
+                dao.getExperiencia());
     }
 }
