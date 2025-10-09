@@ -1,4 +1,4 @@
 package dao;
 
-public class PizzaDAO {
+public interface  PizzaDAO {
 }

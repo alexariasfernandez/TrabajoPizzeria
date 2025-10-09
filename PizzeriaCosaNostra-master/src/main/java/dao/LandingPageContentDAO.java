@@ -1,4 +1,5 @@
 package dao;
 
-public class LandingPageContentDAO {
+public interface  LandingPageContentDAO {
+
 }

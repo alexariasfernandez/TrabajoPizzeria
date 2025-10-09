@@ -1,4 +1,4 @@
 package dao;
 
-public class CartaDAO {
+public interface  CartaDAO {
 }

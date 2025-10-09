@@ -1,4 +1,4 @@
 package dao;
 
-public class IngredienteDAO {
+public interface  IngredienteDAO {
 }
