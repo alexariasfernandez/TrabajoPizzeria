@@ -27,6 +27,7 @@ public class PizzaDAOXMLJSON {
         for(Pizza p : listaPizzas){
             if(p.getId() == pizza.getId()){
                 pizzaDAO.modificar(pizza);
+
             }
         }
         }
