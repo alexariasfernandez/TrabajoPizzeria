@@ -2,10 +2,13 @@ import controlador.IngredienteController;
 import controlador.LandingPageController;
 import controlador.LocalController;
 import controlador.PizzaController;
+import dao.PizzaDAO;
+import model.Pizza;
 import service.*;
 import vista.*;
 
 import javax.swing.*;
+import java.util.List;
 
 public class App {
 
@@ -33,6 +36,7 @@ public class App {
                     //DAOS TO-DO
 
                     //Servicios TO-DO
+
                     LandingPageService landingService = new LandingPageServiceMock();
                     LocalService localService = new LocalServiceMock();
                     PizzaService pizzaService = new PizzaServiceMock();
