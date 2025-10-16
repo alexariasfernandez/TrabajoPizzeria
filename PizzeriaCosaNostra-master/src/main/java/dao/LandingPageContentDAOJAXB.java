@@ -1,26 +1,25 @@
 package dao;
 
-import vista.IdiomaView;
-import vista.LandingPageView;
+import model.LandingPageContent;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 public class LandingPageContentDAOJAXB implements LandingPageContentDAO{
-private Properties properties;
 
-    public LandingPageContentDAOJAXB(String idioma) {
-        properties = new Properties();
-        RecuperarInformacion(idioma);
-    }
+
 
     @Override
-    public void RecuperarInformacion(String idioma) {
-        String ruta = "./src/main/resources/config.properties";
-        try(FileInputStream fis = new FileInputStream(ruta)){
+    public LandingPageContent RecuperarInformacion(String idioma) {
+        Properties properties = new Properties();
+        LandingPageContent content;
 
-            properties.load(new InputStreamReader(fis, StandardCharsets.UTF_8));
+        String ruta = "C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\config.properties";
+        try(InputStream fis = new FileInputStream(ruta)){
+
+            properties.load(fis);
+            System.out.println(properties.get("quienes_somos"));
+            content = new LandingPageContent(properties.getProperty("quienes_somos"),properties.getProperty("amor_productos"), properties.getProperty("experiencia"));
 
 
         } catch (FileNotFoundException e) {
@@ -28,9 +27,6 @@ private Properties properties;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-    public String getInfo(String clave, String idioma){
-        String key = clave + "." + idioma.toUpperCase();
-        return properties.getProperty(key,"Información no disponible");
+        return content;
     }
 }

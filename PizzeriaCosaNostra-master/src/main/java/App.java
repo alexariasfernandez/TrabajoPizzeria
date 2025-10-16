@@ -2,6 +2,8 @@ import controlador.IngredienteController;
 import controlador.LandingPageController;
 import controlador.LocalController;
 import controlador.PizzaController;
+import dao.LandingPageContentDAO;
+import dao.LandingPageContentDAOJAXB;
 import dao.PizzaDAO;
 import model.Pizza;
 import service.*;
@@ -22,6 +24,7 @@ public class App {
     private static PizzaController pizzaController;
     private static IngredienteController ingredienteController;
 
+
     public static void main(String[] args) throws Exception {
         try {
             SwingUtilities.invokeLater(() -> {
@@ -34,10 +37,10 @@ public class App {
                     //Este fichero hay que generarlo
                     String pathPizzaJSON = "src/main/resources/Pizzas.json";
                     //DAOS TO-DO
-
+                    LandingPageContentDAO LPCdao= new LandingPageContentDAOJAXB();
                     //Servicios TO-DO
 
-                    LandingPageService landingService = new LandingPageServiceMock();
+                    LandingPageService landingService = new LandingPageServiceImpl(LPCdao);
                     LocalService localService = new LocalServiceMock();
                     PizzaService pizzaService = new PizzaServiceMock();
                     IngredienteService ingredienteService = new IngredienteServiceMock();

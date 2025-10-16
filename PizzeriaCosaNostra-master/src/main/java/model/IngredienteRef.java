@@ -1,10 +1,13 @@
 package model;
 
 
-    public class IngredienteRef {
+import javax.xml.bind.annotation.XmlAttribute;
+
+public class IngredienteRef {
 
         private static final long serialVersionUID = 1L;
 
+        @XmlAttribute
         private String id;
 
         public IngredienteRef() { } // JAXB necesita constructor sen parámetros

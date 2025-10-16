@@ -1,5 +1,7 @@
 package dao;
 
+import model.LandingPageContent;
+
 public interface  LandingPageContentDAO {
-public void RecuperarInformacion(String idioma);
+public LandingPageContent RecuperarInformacion(String idioma);
 }

@@ -1,5 +1,6 @@
 package model;
 
+import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class Pizza {
 
     private int tiempoPreparacion;
 
+    @XmlElement(name = "ingredienteRef")
     private List<String> ingredientes = new ArrayList<>();
 
     public Pizza() { } // JAXB necesita constructor sin parámetros
