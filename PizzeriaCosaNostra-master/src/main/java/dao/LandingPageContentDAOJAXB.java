@@ -1,6 +1,7 @@
 package dao;
 
 import model.LandingPageContent;
+import vista.LandingPageView;
 
 import java.io.*;
 import java.util.Properties;
@@ -8,9 +9,9 @@ import java.util.Properties;
 public class LandingPageContentDAOJAXB implements LandingPageContentDAO{
 
 
-
     @Override
     public LandingPageContent RecuperarInformacion(String idioma) {
+
         Properties properties = new Properties();
         LandingPageContent content;
 
