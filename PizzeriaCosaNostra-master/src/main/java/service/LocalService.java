@@ -1,5 +1,6 @@
 package service;
 
+import controlador.LocalController;
 import model.Local;
 
 import java.io.IOException;
@@ -10,5 +11,4 @@ public interface LocalService {
     public List<Local> listadoLocales() throws IOException;
 
     public void actualizarLocal(Local l) throws IOException;
-
 }
