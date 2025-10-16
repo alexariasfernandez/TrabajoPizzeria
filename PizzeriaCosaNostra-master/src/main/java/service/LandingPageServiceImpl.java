@@ -2,6 +2,10 @@ package service;
 
 import dao.LandingPageContentDAO;
 import model.LandingPageContent;
+import vista.IdiomaView;
+import vista.LandingPageView;
+
+import javax.swing.*;
 
 public class LandingPageServiceImpl implements LandingPageService {
     LandingPageContentDAO dao;
