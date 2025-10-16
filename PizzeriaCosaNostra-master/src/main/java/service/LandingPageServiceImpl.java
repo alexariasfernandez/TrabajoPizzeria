@@ -9,7 +9,6 @@ import javax.swing.*;
 
 public class LandingPageServiceImpl implements LandingPageService {
     LandingPageContentDAO dao;
-
     public LandingPageServiceImpl(LandingPageContentDAO dao) {
         this.dao = dao;
     }

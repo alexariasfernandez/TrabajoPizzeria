@@ -41,7 +41,7 @@ public class App {
                     //Servicios TO-DO
 
                     LandingPageService landingService = new LandingPageServiceImpl(LPCdao);
-                    LocalService localService = new LocalServiceMock();
+                    LocalService localService = new LocalServiceImpl();
                     PizzaService pizzaService = new PizzaServiceMock();
                     IngredienteService ingredienteService = new IngredienteServiceMock();
                     PizzaConversionService conversionService = new PizzaConversionServiceMock();
