@@ -17,7 +17,8 @@ public class LandingPageContentDAOJAXB implements LandingPageContentDAO{
         Properties properties = new Properties();
         LandingPageContent content;
         IdiomaView view = new IdiomaView();
-try(InputStream fis = new FileInputStream(ruta)){
+
+        try(InputStream fis = new FileInputStream(ruta)){
 
         if(idioma.equals("ES")) {
             properties.load(fis);

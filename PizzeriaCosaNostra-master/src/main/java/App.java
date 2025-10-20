@@ -2,15 +2,13 @@ import controlador.IngredienteController;
 import controlador.LandingPageController;
 import controlador.LocalController;
 import controlador.PizzaController;
+import dao.IngredienteDAOImpl;
 import dao.LandingPageContentDAO;
 import dao.LandingPageContentDAOJAXB;
-import dao.PizzaDAO;
-import model.Pizza;
 import service.*;
 import vista.*;
 
 import javax.swing.*;
-import java.util.List;
 
 public class App {
 
@@ -43,7 +41,7 @@ public class App {
                     LandingPageService landingService = new LandingPageServiceImpl(LPCdao);
                     LocalService localService = new LocalServiceImpl();
                     PizzaService pizzaService = new PizzaServiceMock();
-                    IngredienteService ingredienteService = new IngredienteServiceMock();
+                    IngredienteService ingredienteService = new IngredienteDAOImpl();
                     PizzaConversionService conversionService = new PizzaConversionServiceMock();
 
                     /*===============FIN ZONA DE CÓDIGO MODIFICABLE===============*/
