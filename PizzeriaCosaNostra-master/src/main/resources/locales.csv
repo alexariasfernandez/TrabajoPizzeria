@@ -1,4 +1,4 @@
-ID,Nombre,Dirección,CodigoPostal,Población,Provincia,Teléfono,m2
+id,nombre,direccion,telefono,email,ciudad,provincia,capacidad
 LCL001,Cosa Nostra A Coruña,Rúa Real 15,15003,A Coruña,A Coruña,+34 981 100 101,250
 LCL002,Cosa Nostra Santiago,Rúa do Vilar 22,15705,Santiago de Compostela,A Coruña,+34 981 100 102,220
 LCL003,Cosa Nostra Ferrol,Av. de Esteiro 45,15403,Ferrol,A Coruña,+34 981 100 103,200
@@ -11,6 +11,4 @@ LCL009,Cosa Nostra Monforte,Rúa Cardenal 20,27400,Monforte de Lemos,Lugo,+34 98
 LCL010,Cosa Nostra Betanzos,Plaza García Hermanos 5,15300,Betanzos,A Coruña,+34 981 100 104,170
 LCL011,Cosa Nostra Lalín,Av. de Buenos Aires 10,36500,Lalín,Pontevedra,+34 986 800 203,200
 LCL012,Cosa Nostra A Estrada,Rúa Nova 32,36680,A Estrada,Pontevedra,+34 986 800 210,190
-LCL025,X,XX,X,X,X,X,0
-LCL027,Y,Y,Y,Y,Y,Y,0
-LCL029,Z,Z,Z,Z,Z,Z,0
+LCL013,fgsdasad,rfasdsad,dsad,dsad,dsad,dsad,312
