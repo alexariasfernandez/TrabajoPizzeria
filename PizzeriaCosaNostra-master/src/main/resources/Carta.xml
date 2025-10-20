@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Carta>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Carta>
     <Pizza ID="PZZ001">
         <Nombre>Mamma Mia</Nombre>
         <Descripcion>Clásica pizza con base de tomate, mozzarella, pepperoni y orégano.</Descripcion>

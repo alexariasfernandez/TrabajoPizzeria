@@ -40,7 +40,7 @@ public class App {
 
                     LandingPageService landingService = new LandingPageServiceImpl(LPCdao);
                     LocalService localService = new LocalServiceImpl();
-                    PizzaService pizzaService = new PizzaServiceMock();
+                    PizzaService pizzaService = new PizzaServiceImpl();
                     IngredienteService ingredienteService = new IngredienteDAOImpl();
                     PizzaConversionService conversionService = new PizzaConversionServiceMock();
 

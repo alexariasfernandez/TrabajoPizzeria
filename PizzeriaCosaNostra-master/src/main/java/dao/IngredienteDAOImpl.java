@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IngredienteDAOImpl implements IngredienteService {
-    String path ="C:\\Users\\alex.ariasfernandez\\IdeaProjects\\PizzeriaCosaNostra-master\\PizzeriaCosaNostra-master\\src\\main\\resources\\ingredientes.dat";
+    String path ="C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\ingredientes.dat";
     List <Ingrediente> listaingredientes = new ArrayList<>();
     @Override
     public List<Ingrediente> listadoIngredientes() throws ClassNotFoundException {
