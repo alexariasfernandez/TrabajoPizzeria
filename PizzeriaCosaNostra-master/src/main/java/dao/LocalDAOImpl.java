@@ -15,7 +15,7 @@ public class LocalDAOImpl implements LocalDAO{
 
 
     public List<Local> LecturaCSV() {
-        listalocales.clear();
+        listalocales.clear(); // Limpiamos la lista de locales.
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
          String linea;
 

@@ -22,7 +22,7 @@ LocalController controlador;
 
     @Override
     public void actualizarLocal(Local l) throws IOException {
-    List<Local> locales = dao.LecturaCSV();
+    List<Local> locales = dao.LecturaCSV(); // Actualizamos la lista
     boolean encontrado = false;
 
     for(int i = 0;i<locales.size();i++){
@@ -35,7 +35,7 @@ LocalController controlador;
     if(!encontrado){
         locales.add(l);
     }
-
+        // Sobreescribir el CSV para no agregar solo al final.
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(dao.getPath()))) {
             // Escribir encabezado
             bw.write("id,nombre,direccion,telefono,email,ciudad,provincia,capacidad");
@@ -50,6 +50,4 @@ LocalController controlador;
             System.out.println("Error al escribir CSV: " + e.getMessage());
         }
 }
-
-
 }
