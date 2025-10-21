@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 public class LocalDAOImpl implements LocalDAO{
-    String path = "C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\locales.csv";
+    String path = "C:\\Users\\alex.ariasfernandez\\IdeaProjects\\PizzeriaCosaNostra-master\\PizzeriaCosaNostra-master\\src\\main\\resources\\locales.csv";
     List<Local> listalocales = new ArrayList<>();
 
 

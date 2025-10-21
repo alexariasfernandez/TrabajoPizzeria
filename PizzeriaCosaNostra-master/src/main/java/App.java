@@ -42,7 +42,7 @@ public class App {
                     LocalService localService = new LocalServiceImpl();
                     PizzaService pizzaService = new PizzaServiceImpl();
                     IngredienteService ingredienteService = new IngredienteDAOImpl();
-                    PizzaConversionService conversionService = new PizzaConversionServiceMock();
+                    PizzaConversionService conversionService = new PizzaConversionServiceImpl();
 
                     /*===============FIN ZONA DE CÓDIGO MODIFICABLE===============*/
                     // Inicializar vistas

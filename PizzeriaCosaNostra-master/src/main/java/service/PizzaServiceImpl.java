@@ -7,6 +7,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import javax.swing.*;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -19,6 +20,7 @@ import java.util.List;
 
 public class PizzaServiceImpl implements PizzaService{
 PizzaDAO dao = new PizzaDAOXMLJSON();
+    File file = new File("C:\\Users\\alex.ariasfernandez\\IdeaProjects\\PizzeriaCosaNostra-master\\PizzeriaCosaNostra-master\\src\\main\\resources\\Carta.xml");
 
     @Override
     public List<Pizza> listadoPizzas() throws JAXBException {
@@ -27,66 +29,71 @@ PizzaDAO dao = new PizzaDAOXMLJSON();
 
     @Override
     public void actualizarPizza(Pizza p) throws JAXBException {
-        File file = new File("C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\Carta.xml");
-        List<Pizza> pizzas = dao.readFromXML();
+        List<Pizza> pizzas = listadoPizzas();
         boolean encontrado = false;
-        for(int i = 0;i<pizzas.size();i++){
-            if(pizzas.get(i).getId().equalsIgnoreCase(p.getId())){
+
+        // Actualizar o añadir en la lista en memoria
+        for (int i = 0; i < pizzas.size(); i++) {
+            if (pizzas.get(i).getId().equals(p.getId())) {
                 pizzas.set(i, p);
                 encontrado = true;
                 break;
             }
         }
-        if(!encontrado){
+        if (!encontrado) {
             pizzas.add(p);
         }
-        try{
+        // ESCRIBIR XML
+        try {
             DocumentBuilderFactory dbfactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder= dbfactory.newDocumentBuilder();
-            Document document = dBuilder.parse(file);
-            document.getDocumentElement().normalize();
+            DocumentBuilder dBuilder = dbfactory.newDocumentBuilder();
+            Document document = dBuilder.newDocument();
 
-            Element pizzaNueva = document.createElement("Pizza");
-            pizzaNueva.setAttribute("ID",p.getId());
+            // Crear elemento raíz
+            Element root = document.createElement("Pizzas");
+            document.appendChild(root);
 
-            Element nombre = document.createElement("Nombre");
-            nombre.setTextContent(p.getNombre());
-            pizzaNueva.appendChild(nombre);
+            for (Pizza pizza : pizzas) {
+                Element pizzaElem = document.createElement("Pizza");
+                pizzaElem.setAttribute("ID", pizza.getId());
 
-            Element descripcion = document.createElement("Descripcion");
-            descripcion.setTextContent(p.getDescripcion());
-            pizzaNueva.appendChild(descripcion);
+                Element nombre = document.createElement("Nombre");
+                nombre.setTextContent(pizza.getNombre());
+                pizzaElem.appendChild(nombre);
 
-            Element calorias = document.createElement("Calorias");
-            calorias.setTextContent(String.valueOf(p.getCalorias()));
-            pizzaNueva.appendChild(calorias);
+                Element descripcion = document.createElement("Descripcion");
+                descripcion.setTextContent(pizza.getDescripcion());
+                pizzaElem.appendChild(descripcion);
 
-            Element precio = document.createElement("Precio");
-            precio.setTextContent(String.valueOf(p.getPrecio()));
-            pizzaNueva.appendChild(precio);
+                Element calorias = document.createElement("Calorias");
+                calorias.setTextContent(String.valueOf(pizza.getCalorias()));
+                pizzaElem.appendChild(calorias);
 
-            Element tiempoPreparacion = document.createElement("TiempoPreparacion");
-            tiempoPreparacion.setTextContent(String.valueOf(p.getTiempoPreparacion()));
-            pizzaNueva.appendChild(tiempoPreparacion);
+                Element precio = document.createElement("Precio");
+                precio.setTextContent(String.valueOf(pizza.getPrecio()));
+                pizzaElem.appendChild(precio);
 
-            Element ingredientes = document.createElement("Ingredientes");
+                Element tiempoPreparacion = document.createElement("TiempoPreparacion");
+                tiempoPreparacion.setTextContent(String.valueOf(pizza.getTiempoPreparacion()));
+                pizzaElem.appendChild(tiempoPreparacion);
 
-            List<String> listaingredientes = p.getIngredientes();
-            for(String id : listaingredientes){
-                Element ingrediente = document.createElement("Ingrediente");
-                ingrediente.setTextContent(id);
-                ingredientes.appendChild(ingrediente);
+                Element ingredientes = document.createElement("Ingredientes");
+                for (String ingr : pizza.getIngredientes()) {
+                    Element ingrediente = document.createElement("Ingrediente");
+                    ingrediente.setTextContent(ingr);
+                    ingredientes.appendChild(ingrediente);
+                }
+                pizzaElem.appendChild(ingredientes);
+
+                root.appendChild(pizzaElem);
             }
-            pizzaNueva.appendChild(ingredientes);
 
-            Node root = document.getDocumentElement();
-            root.appendChild(pizzaNueva);
-
-            TransformerFactory TFactory = TransformerFactory.newInstance();
-            Transformer transformer = TFactory.newTransformer();
+            // Guardar en el archivo
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(document);
             StreamResult result = new StreamResult(file);
-            transformer.transform(source,result);
+            transformer.transform(source, result);
 
         } catch (Exception e) {
             throw new RuntimeException(e);

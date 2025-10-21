@@ -43,7 +43,7 @@ LocalController controlador;
 
             // Escribir todos los locales actualizados
             for (Local local : locales) {
-                bw.write(local.toString()); // asegúrate que Local.toString() devuelva formato CSV
+                bw.write(local.toString());
                 bw.newLine();
             }
         } catch (Exception e) {

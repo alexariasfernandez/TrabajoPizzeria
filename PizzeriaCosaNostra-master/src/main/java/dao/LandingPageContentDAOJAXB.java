@@ -13,7 +13,7 @@ public class LandingPageContentDAOJAXB implements LandingPageContentDAO{
 
     @Override
     public LandingPageContent RecuperarInformacion(String idioma) {
-        String ruta = "C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\config.properties";
+        String ruta = "C:\\Users\\alex.ariasfernandez\\IdeaProjects\\PizzeriaCosaNostra-master\\PizzeriaCosaNostra-master\\src\\main\\resources\\config.properties";
         Properties properties = new Properties();
         LandingPageContent content;
         IdiomaView view = new IdiomaView();
