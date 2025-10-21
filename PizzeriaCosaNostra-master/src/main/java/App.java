@@ -41,7 +41,7 @@ public class App {
                     LandingPageService landingService = new LandingPageServiceImpl(LPCdao);
                     LocalService localService = new LocalServiceImpl();
                     PizzaService pizzaService = new PizzaServiceImpl();
-                    IngredienteService ingredienteService = new IngredienteDAOImpl();
+                    IngredienteService ingredienteService = new IngredienteServiceImpl();
                     PizzaConversionService conversionService = new PizzaConversionServiceImpl();
 
                     /*===============FIN ZONA DE CÓDIGO MODIFICABLE===============*/

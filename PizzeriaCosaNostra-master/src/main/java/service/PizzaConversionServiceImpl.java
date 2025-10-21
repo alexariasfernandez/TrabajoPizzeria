@@ -14,10 +14,10 @@ import java.nio.file.Paths;
 
 public class PizzaConversionServiceImpl implements PizzaConversionService {
     PizzaDAO dao = new PizzaDAOXMLJSON();
-    String path ="C:\\Users\\alex.ariasfernandez\\IdeaProjects\\PizzeriaCosaNostra-master\\PizzeriaCosaNostra-master\\src\\main\\resources\\Carta.xml";
-    String pathFinal ="C:\\Users\\alex.ariasfernandez\\IdeaProjects\\PizzeriaCosaNostra-master\\PizzeriaCosaNostra-master\\src\\main\\resources\\CartaFinal.json";
+    String path ="C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\Carta.xml";
+    String pathFinal ="C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\CartaFinal.json";
 
-    File file = new File("C:\\Users\\alex.ariasfernandez\\IdeaProjects\\PizzeriaCosaNostra-master\\PizzeriaCosaNostra-master\\src\\main\\resources\\CartaFinal.json");
+    File file = new File("C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\CartaFinal.json");
     @Override
     public boolean generarFicheroPizzas() {
         if (file.exists()) {

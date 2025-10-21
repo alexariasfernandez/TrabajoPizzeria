@@ -20,7 +20,7 @@ import java.util.List;
 
 public class PizzaServiceImpl implements PizzaService{
 PizzaDAO dao = new PizzaDAOXMLJSON();
-    File file = new File("C:\\Users\\alex.ariasfernandez\\IdeaProjects\\PizzeriaCosaNostra-master\\PizzeriaCosaNostra-master\\src\\main\\resources\\Carta.xml");
+    File file = new File("C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\Carta.xml");
 
     @Override
     public List<Pizza> listadoPizzas() throws JAXBException {

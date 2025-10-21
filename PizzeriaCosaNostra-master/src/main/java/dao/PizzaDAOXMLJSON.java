@@ -26,8 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PizzaDAOXMLJSON implements PizzaDAO{
-    String path ="C:\\Users\\alex.ariasfernandez\\IdeaProjects\\PizzeriaCosaNostra-master\\PizzeriaCosaNostra-master\\src\\main\\resources\\Carta.xml";
-    String pathFinal ="C:\\Users\\alex.ariasfernandez\\IdeaProjects\\PizzeriaCosaNostra-master\\PizzeriaCosaNostra-master\\src\\main\\resources\\CartaFinal.json";
+    String path ="C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\Carta.xml";
+    String pathFinal ="C:\\Users\\xoel.lagohermida\\ProyectoPizza\\PizzeriaCosaNostra-master\\src\\main\\resources\\CartaFinal.json";
     List<Pizza> listaPizzas = new ArrayList<>();
 
         @Override
